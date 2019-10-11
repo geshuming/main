@@ -18,11 +18,11 @@ import seedu.module.logic.LogicManager;
 import seedu.module.model.Model;
 import seedu.module.model.ModelManager;
 import seedu.module.model.ModuleBook;
-import seedu.module.model.ReadOnlyModuleBook;
 import seedu.module.model.ReadOnlyUserPrefs;
 import seedu.module.model.UserPrefs;
 import seedu.module.model.module.ArchivedModuleList;
 import seedu.module.model.util.SampleDataUtil;
+import seedu.module.storage.JsonArchivedModuleList;
 import seedu.module.storage.JsonModuleBookStorage;
 import seedu.module.storage.JsonUserPrefsStorage;
 import seedu.module.storage.ModuleBookStorage;
@@ -40,6 +40,7 @@ public class MainApp extends Application {
     public static final Version VERSION = new Version(0, 6, 0, true);
 
     private static final Logger logger = LogsCenter.getLogger(MainApp.class);
+    private static final String ARCHIVED_MODULES_RESOURCE_FILE_NAME = "data/archivedModules.json";
 
     protected Ui ui;
     protected Logic logic;
@@ -77,7 +78,6 @@ public class MainApp extends Application {
     private Model initModelManager(Storage storage, ReadOnlyUserPrefs userPrefs) {
         Optional<ModuleBook> moduleBookOptional;
         ModuleBook initialData;
-        ArchivedModuleList archivedModules = storage.readArchivedModules();
 
         try {
             moduleBookOptional = storage.readModuleBook();
@@ -93,11 +93,11 @@ public class MainApp extends Application {
             initialData = new ModuleBook();
         }
 
+        ArchivedModuleList archivedModules = JsonArchivedModuleList.readArchivedModules(
+            ARCHIVED_MODULES_RESOURCE_FILE_NAME);
         initialData.setArchivedModules(archivedModules);
 
-        ReadOnlyModuleBook readOnlyModuleBook = initialData;
-
-        return new ModelManager(readOnlyModuleBook, userPrefs);
+        return new ModelManager(initialData, userPrefs);
     }
 
     private void initLogging(Config config) {

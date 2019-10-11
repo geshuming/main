@@ -11,7 +11,6 @@ import seedu.module.model.ModuleBook;
 import seedu.module.model.ReadOnlyModuleBook;
 import seedu.module.model.ReadOnlyUserPrefs;
 import seedu.module.model.UserPrefs;
-import seedu.module.model.module.ArchivedModuleList;
 
 /**
  * Manages storage of ModuleBook data in local storage.
@@ -63,12 +62,6 @@ public class StorageManager implements Storage {
     public Optional<ModuleBook> readModuleBook(Path filePath) throws DataConversionException, IOException {
         logger.fine("Attempting to read data from file: " + filePath);
         return moduleBookStorage.readModuleBook(filePath);
-    }
-
-    @Override
-    public ArchivedModuleList readArchivedModules() {
-        logger.fine("Attempting to read archived modules");
-        return moduleBookStorage.readArchivedModules();
     }
 
     @Override

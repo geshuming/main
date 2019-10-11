@@ -7,7 +7,6 @@ import java.util.Optional;
 import seedu.module.commons.exceptions.DataConversionException;
 import seedu.module.model.ModuleBook;
 import seedu.module.model.ReadOnlyModuleBook;
-import seedu.module.model.module.ArchivedModuleList;
 
 /**
  * Represents a storage for {@link ModuleBook}.
@@ -32,11 +31,6 @@ public interface ModuleBookStorage {
      * @see #getModuleBookFilePath()
      */
     Optional<ModuleBook> readModuleBook(Path filePath) throws DataConversionException, IOException;
-
-    /**
-     * Returns an {@code ArchivedModuleList} read from a Json file.
-     */
-    ArchivedModuleList readArchivedModules();
 
     /**
      * Saves the given {@link ReadOnlyModuleBook} to the storage.

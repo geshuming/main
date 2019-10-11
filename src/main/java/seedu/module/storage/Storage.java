@@ -9,7 +9,6 @@ import seedu.module.model.ModuleBook;
 import seedu.module.model.ReadOnlyModuleBook;
 import seedu.module.model.ReadOnlyUserPrefs;
 import seedu.module.model.UserPrefs;
-import seedu.module.model.module.ArchivedModuleList;
 
 /**
  * API of the Storage component
@@ -27,9 +26,6 @@ public interface Storage extends ModuleBookStorage, UserPrefsStorage {
 
     @Override
     Optional<ModuleBook> readModuleBook() throws DataConversionException, IOException;
-
-    @Override
-    ArchivedModuleList readArchivedModules();
 
     @Override
     void saveModuleBook(ReadOnlyModuleBook moduleBook) throws IOException;
