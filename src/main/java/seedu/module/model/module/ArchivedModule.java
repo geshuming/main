@@ -56,11 +56,11 @@ public class ArchivedModule {
             return true;
         }
 
-        if (!(other instanceof Module)) {
+        if (!(other instanceof ArchivedModule)) {
             return false;
         }
 
-        Module otherModule = (Module) other;
+        ArchivedModule otherModule = (ArchivedModule) other;
         return otherModule.getModuleCode().equals(getModuleCode()) && otherModule.getTitle().equals(getTitle())
                 && otherModule.getDescription().equals(getDescription());
     }
