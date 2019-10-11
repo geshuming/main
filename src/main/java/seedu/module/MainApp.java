@@ -21,6 +21,7 @@ import seedu.module.model.ModuleBook;
 import seedu.module.model.ReadOnlyModuleBook;
 import seedu.module.model.ReadOnlyUserPrefs;
 import seedu.module.model.UserPrefs;
+import seedu.module.model.module.ArchivedModuleList;
 import seedu.module.model.util.SampleDataUtil;
 import seedu.module.storage.JsonModuleBookStorage;
 import seedu.module.storage.JsonUserPrefsStorage;
@@ -74,8 +75,10 @@ public class MainApp extends Application {
      * or an empty module book will be used instead if errors occur when reading {@code storage}'s module book.
      */
     private Model initModelManager(Storage storage, ReadOnlyUserPrefs userPrefs) {
-        Optional<ReadOnlyModuleBook> moduleBookOptional;
-        ReadOnlyModuleBook initialData;
+        Optional<ModuleBook> moduleBookOptional;
+        ModuleBook initialData;
+        ArchivedModuleList archivedModules = storage.readArchivedModules();
+
         try {
             moduleBookOptional = storage.readModuleBook();
             if (!moduleBookOptional.isPresent()) {
@@ -90,7 +93,11 @@ public class MainApp extends Application {
             initialData = new ModuleBook();
         }
 
-        return new ModelManager(initialData, userPrefs);
+        initialData.setArchivedModules(archivedModules);
+
+        ReadOnlyModuleBook readOnlyModuleBook = initialData;
+
+        return new ModelManager(readOnlyModuleBook, userPrefs);
     }
 
     private void initLogging(Config config) {
