@@ -21,7 +21,7 @@ public class ArchivedModuleList implements Iterable<ArchivedModule> {
      */
     public boolean contains(ArchivedModule toCheck) {
         requireNonNull(toCheck);
-        return internalList.stream().anyMatch(toCheck::isSameModule);
+        return internalList.stream().anyMatch(toCheck::isSameArchivedModule);
     }
 
     /**
