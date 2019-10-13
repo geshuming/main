@@ -27,7 +27,7 @@ StorageManager o--> ModuleBookStorage
 
 JsonUserPrefsStorage .left.|> UserPrefsStorage
 JsonModuleBookStorage .left.|> ModuleBookStorage
-JsonModuleBookStorage .right.|> JsonArchivedModuleList
+JsonModuleBookStorage .right.> JsonArchivedModuleList
 JsonModuleBookStorage .down.> JsonSerializableModuleBookStorage
 JsonSerializableModuleBookStorage .right.> JsonSerializableModule
 
