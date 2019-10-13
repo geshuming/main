@@ -4,6 +4,8 @@ skinparam arrowThickness 1.1
 skinparam arrowColor MODEL_COLOR
 skinparam classBackgroundColor MODEL_COLOR
 
+Class HiddenOutside #FFFFFF
+
 Package Model <<Rectangle>>{
 Interface ReadOnlyModuleBook <<Interface>>
 Interface Model <<Interface>>
@@ -23,24 +25,23 @@ Class TrackedModuleList
 Interface Module <<Interface>>
 }
 
-Class HiddenOutside #FFFFFF
 HiddenOutside ..> Model
 
-ModuleBook .up.|> ReadOnlyModuleBook
+ModuleBook .right.|> ReadOnlyModuleBook
 
 ModelManager .up.|> Model
 Model .right.> ObservableList
-ModelManager o--> "1" ModuleBook
-ModelManager o-left-> "1" UserPrefs
-UserPrefs .up.|> ReadOnlyUserPrefs
+ModelManager o-down-> "1" ModuleBook
+ModelManager o-right-> "1" UserPrefs
+UserPrefs .right.|> ReadOnlyUserPrefs
 
-ModuleBook *--> "1" TrackedModuleList
-TrackedModuleList o--> "*" TrackedModule
-TrackedModule .down.|> Module
-ModuleBook *--> "1" ArchivedModuleList
-ArchivedModuleList o--> "*" ArchivedModule
+ModuleBook *-right-> "1" TrackedModuleList
+ModuleBook *-down-> "1" ArchivedModuleList
+TrackedModuleList o-down-> "*" TrackedModule
+ArchivedModuleList o-down-> "*" ArchivedModule
 TrackedModule *-right-> "1" ArchivedModule : references >
+TrackedModule .down.|> Module
 ArchivedModule .down.|> Module
 
-ModelManager -->"*" Module : filtered list
+ModelManager o-down->"*" Module : observes >
 @enduml
