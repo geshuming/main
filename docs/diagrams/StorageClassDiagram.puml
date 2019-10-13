@@ -20,7 +20,6 @@ Class JsonAdaptedArchivedModule
 
 Class HiddenOutside #FFFFFF
 HiddenOutside ..> Storage
-HiddenOutside ..> JsonArchivedModuleList
 
 StorageManager .left.|> Storage
 StorageManager o-right-> UserPrefsStorage
@@ -28,6 +27,7 @@ StorageManager o--> ModuleBookStorage
 
 JsonUserPrefsStorage .left.|> UserPrefsStorage
 JsonModuleBookStorage .left.|> ModuleBookStorage
+JsonModuleBookStorage .right.|> JsonArchivedModuleList
 JsonModuleBookStorage .down.> JsonSerializableModuleBookStorage
 JsonSerializableModuleBookStorage .right.> JsonSerializableModule
 
