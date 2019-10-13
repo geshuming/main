@@ -18,8 +18,9 @@ Class ReadOnlyUserPrefs
 Package Module {
 Class ArchivedModule
 Class ArchivedModuleList
-Class Module
-Class UniqueModuleList
+Class TrackedModule
+Class TrackedModuleList
+Interface Module <<Interface>>
 }
 
 Class HiddenOutside #FFFFFF
@@ -33,11 +34,13 @@ ModelManager o--> "1" ModuleBook
 ModelManager o-left-> "1" UserPrefs
 UserPrefs .up.|> ReadOnlyUserPrefs
 
-ModuleBook *--> "1" UniqueModuleList
-UniqueModuleList o--> "*" Module
+ModuleBook *--> "1" TrackedModuleList
+TrackedModuleList o--> "*" TrackedModule
+TrackedModule .down.|> Module
 ModuleBook *--> "1" ArchivedModuleList
 ArchivedModuleList o--> "*" ArchivedModule
-Module *-right-> "1" ArchivedModule
+TrackedModule *-right-> "1" ArchivedModule : references >
+ArchivedModule .down.|> Module
 
 ModelManager -->"*" Module : filtered list
 @enduml
