@@ -16,6 +16,7 @@ import seedu.module.logic.Logic;
 import seedu.module.logic.commands.CommandResult;
 import seedu.module.logic.commands.exceptions.CommandException;
 import seedu.module.logic.parser.exceptions.ParseException;
+import seedu.module.model.module.Module;
 
 /**
  * The Main Window. Provides the basic application layout containing
@@ -37,6 +38,7 @@ public class MainWindow extends UiPart<Stage> {
 
     // Independent Ui parts belonging to the mainPanel
     private HomeViewPanel homeViewPanel;
+    private ModuleViewPanel moduleViewPanel;
 
     @FXML
     private StackPane commandBoxPlaceholder;
@@ -170,6 +172,26 @@ public class MainWindow extends UiPart<Stage> {
         primaryStage.hide();
     }
 
+    /**
+     * Displays or Removes the currently displayed module.
+     */
+    private void handleShowModule() {
+        Module displayedModule = logic.getDisplayedModule();
+
+        // Removes the current displayed module
+        if (moduleViewPanel != null) {
+            mainPanelPlaceholder.getChildren().remove(moduleViewPanel.getRoot());
+        }
+
+        // Early return if nothing to display
+        if (displayedModule == null) {
+            return;
+        }
+
+        moduleViewPanel = new ModuleViewPanel(displayedModule);
+        mainPanelPlaceholder.getChildren().add(moduleViewPanel.getRoot());
+    }
+
     public ModuleListPanel getModuleListPanel() {
         return moduleListPanel;
     }
@@ -187,6 +209,10 @@ public class MainWindow extends UiPart<Stage> {
 
             if (commandResult.isShowHelp()) {
                 handleHelp();
+            }
+
+            if (commandResult.isShowModule()) {
+                handleShowModule();
             }
 
             if (commandResult.isExit()) {
