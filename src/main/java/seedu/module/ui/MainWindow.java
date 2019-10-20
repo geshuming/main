@@ -35,6 +35,9 @@ public class MainWindow extends UiPart<Stage> {
     private ResultDisplay resultDisplay;
     private HelpWindow helpWindow;
 
+    // Independent Ui parts belonging to the mainPanel
+    private HomeViewPanel homeViewPanel;
+
     @FXML
     private StackPane commandBoxPlaceholder;
 
@@ -43,6 +46,9 @@ public class MainWindow extends UiPart<Stage> {
 
     @FXML
     private StackPane moduleListPanelPlaceholder;
+
+    @FXML
+    private StackPane mainPanelPlaceholder;
 
     @FXML
     private StackPane resultDisplayPlaceholder;
@@ -110,6 +116,9 @@ public class MainWindow extends UiPart<Stage> {
     void fillInnerParts() {
         moduleListPanel = new ModuleListPanel(logic.getDisplayedList());
         moduleListPanelPlaceholder.getChildren().add(moduleListPanel.getRoot());
+
+        homeViewPanel = new HomeViewPanel();
+        mainPanelPlaceholder.getChildren().add(homeViewPanel.getRoot());
 
         resultDisplay = new ResultDisplay();
         resultDisplayPlaceholder.getChildren().add(resultDisplay.getRoot());
