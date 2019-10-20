@@ -13,6 +13,7 @@ import seedu.module.logic.commands.ExitCommand;
 import seedu.module.logic.commands.FindCommand;
 import seedu.module.logic.commands.HelpCommand;
 import seedu.module.logic.commands.ListCommand;
+import seedu.module.logic.commands.ViewCommand;
 import seedu.module.logic.parser.exceptions.ParseException;
 
 /**
@@ -50,6 +51,9 @@ public class ModuleBookParser {
 
         case FindCommand.COMMAND_WORD:
             return new FindCommandParser().parse(arguments);
+
+        case ViewCommand.COMMAND_WORD:
+            return new ViewCommandParser().parse(arguments);
 
         case ListCommand.COMMAND_WORD:
             return new ListCommand();

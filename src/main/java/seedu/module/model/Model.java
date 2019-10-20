@@ -113,5 +113,16 @@ public interface Model {
      * Changes the current list to be shown to the TrackedModuleList.
      */
     void displayTrackedList();
+
+    /**
+     * Returns the active module that is being viewed by the user.
+     */
+    Module getDisplayedModule();
+
+    /**
+     * Sets the active module that will be viewed by the user.
+     * @param toDisplay the module to be displayed
+     */
+    void setDisplayedModule(Module toDisplay);
 }
 

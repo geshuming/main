@@ -56,6 +56,11 @@ public class LogicManager implements Logic {
     }
 
     @Override
+    public Module getDisplayedModule() {
+        return model.getDisplayedModule();
+    }
+
+    @Override
     public Path getModuleBookFilePath() {
         return model.getModuleBookFilePath();
     }

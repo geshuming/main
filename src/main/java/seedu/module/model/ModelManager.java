@@ -27,6 +27,7 @@ public class ModelManager implements Model {
     private final FilteredList<TrackedModule> filteredTrackedModules;
     private final FilteredList<ArchivedModule> filteredArchivedModules;
     private ObservableList<Module> displayedList = FXCollections.observableArrayList();
+    private Module displayedModule;
 
     /**
      * Initializes a ModelManager with the given moduleBook and userPrefs.
@@ -170,6 +171,18 @@ public class ModelManager implements Model {
         for (Module i : filteredTrackedModules) {
             displayedList.add(i);
         }
+    }
+
+    //=========== Displayed List Accessors =============================================================
+
+    @Override
+    public Module getDisplayedModule() {
+        return displayedModule;
+    }
+
+    @Override
+    public void setDisplayedModule(Module toDisplay) {
+        this.displayedModule = toDisplay;
     }
 
     @Override

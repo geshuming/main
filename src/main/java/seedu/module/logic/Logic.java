@@ -30,6 +30,11 @@ public interface Logic {
     ObservableList<Module> getDisplayedList();
 
     /**
+     * Returns the active module that is being viewed by the user.
+     */
+    Module getDisplayedModule();
+
+    /**
      * Returns the user prefs' Module book file path.
      */
     Path getModuleBookFilePath();
