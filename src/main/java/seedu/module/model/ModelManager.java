@@ -25,8 +25,8 @@ public class ModelManager implements Model {
 
     private final ModuleBook moduleBook;
     private final UserPrefs userPrefs;
-    private final FilteredList<TrackedModule> filteredTrackedModules;
-    private final FilteredList<ArchivedModule> filteredArchivedModules;
+    private FilteredList<TrackedModule> filteredTrackedModules;
+    private FilteredList<ArchivedModule> filteredArchivedModules;
     private ObservableList<Module> displayedList = FXCollections.observableArrayList();
     private Optional<Module> displayedModule = Optional.empty();
 
@@ -90,6 +90,8 @@ public class ModelManager implements Model {
     @Override
     public void setModuleBook(ReadOnlyModuleBook moduleBook) {
         this.moduleBook.resetData(moduleBook);
+        filteredTrackedModules = new FilteredList<>(this.moduleBook.getModuleList());
+        filteredArchivedModules = new FilteredList<>(this.moduleBook.getArchivedModuleList());
     }
 
     @Override
