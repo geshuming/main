@@ -1,6 +1,7 @@
 package seedu.module.model;
 
 import java.nio.file.Path;
+import java.util.Optional;
 import java.util.function.Predicate;
 
 import javafx.collections.ObservableList;
@@ -117,7 +118,7 @@ public interface Model {
     /**
      * Returns the active module that is being viewed by the user.
      */
-    Module getDisplayedModule();
+    Optional<Module> getDisplayedModule();
 
     /**
      * Sets the active module that will be viewed by the user.

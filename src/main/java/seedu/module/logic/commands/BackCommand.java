@@ -4,7 +4,6 @@ import static java.util.Objects.requireNonNull;
 
 import seedu.module.logic.commands.exceptions.CommandException;
 import seedu.module.model.Model;
-import seedu.module.model.module.Module;
 
 /**
  * Returns from a module-view state (from View Command). Effectively does nothing when not in that state.
@@ -23,9 +22,7 @@ public class BackCommand extends Command {
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
 
-        Module displayedModule = model.getDisplayedModule();
-
-        if (displayedModule == null) {
+        if (model.getDisplayedModule().isEmpty()) {
             return new CommandResult(MESSAGE_BACK_COMMAND_NOT_EFFECTIVE,
                 false, true, false);
         }

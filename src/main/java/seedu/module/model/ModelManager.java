@@ -4,6 +4,7 @@ import static java.util.Objects.requireNonNull;
 import static seedu.module.commons.util.CollectionUtil.requireAllNonNull;
 
 import java.nio.file.Path;
+import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.logging.Logger;
 
@@ -27,7 +28,7 @@ public class ModelManager implements Model {
     private final FilteredList<TrackedModule> filteredTrackedModules;
     private final FilteredList<ArchivedModule> filteredArchivedModules;
     private ObservableList<Module> displayedList = FXCollections.observableArrayList();
-    private Module displayedModule;
+    private Optional<Module> displayedModule = Optional.empty();
 
     /**
      * Initializes a ModelManager with the given moduleBook and userPrefs.
@@ -176,13 +177,13 @@ public class ModelManager implements Model {
     //=========== Displayed List Accessors =============================================================
 
     @Override
-    public Module getDisplayedModule() {
+    public Optional<Module> getDisplayedModule() {
         return displayedModule;
     }
 
     @Override
     public void setDisplayedModule(Module toDisplay) {
-        this.displayedModule = toDisplay;
+        this.displayedModule = Optional.ofNullable(toDisplay);
     }
 
     @Override
@@ -202,7 +203,8 @@ public class ModelManager implements Model {
         return moduleBook.equals(other.moduleBook)
                 && userPrefs.equals(other.userPrefs)
                 && filteredTrackedModules.equals(other.filteredTrackedModules)
-                && filteredArchivedModules.equals(other.filteredArchivedModules);
+                && filteredArchivedModules.equals(other.filteredArchivedModules)
+                && displayedModule.equals(other.displayedModule);
     }
 
 }

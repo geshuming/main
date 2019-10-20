@@ -1,5 +1,6 @@
 package seedu.module.ui;
 
+import java.util.Optional;
 import java.util.logging.Logger;
 
 import javafx.event.ActionEvent;
@@ -176,7 +177,7 @@ public class MainWindow extends UiPart<Stage> {
      * Displays or Removes the currently displayed module.
      */
     private void handleShowModule() {
-        Module displayedModule = logic.getDisplayedModule();
+        Optional<Module> displayedModule = logic.getDisplayedModule();
 
         // Removes the current displayed module
         if (moduleViewPanel != null) {
@@ -184,11 +185,11 @@ public class MainWindow extends UiPart<Stage> {
         }
 
         // Early return if nothing to display
-        if (displayedModule == null) {
+        if (displayedModule.isEmpty()) {
             return;
         }
 
-        moduleViewPanel = new ModuleViewPanel(displayedModule);
+        moduleViewPanel = new ModuleViewPanel(displayedModule.get());
         mainPanelPlaceholder.getChildren().add(moduleViewPanel.getRoot());
     }
 
