@@ -7,6 +7,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import seedu.module.logic.commands.AddCommand;
+import seedu.module.logic.commands.AddDeadlineCommand;
 import seedu.module.logic.commands.BackCommand;
 import seedu.module.logic.commands.Command;
 import seedu.module.logic.commands.DeleteCommand;
@@ -43,6 +44,9 @@ public class ModuleBookParser {
         final String commandWord = matcher.group("commandWord");
         final String arguments = matcher.group("arguments");
         switch (commandWord) {
+
+        case AddDeadlineCommand.COMMAND_WORD:
+            return new AddDeadlineCommandParser().parse(arguments);
 
         case AddCommand.COMMAND_WORD:
             return new AddCommandParser().parse(arguments);
