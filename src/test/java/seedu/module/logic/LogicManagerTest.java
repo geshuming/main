@@ -7,6 +7,7 @@ import static seedu.module.testutil.Assert.assertThrows;
 
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.Optional;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -25,6 +26,7 @@ import seedu.module.model.ReadOnlyModuleBook;
 import seedu.module.model.UserPrefs;
 import seedu.module.model.module.ArchivedModule;
 import seedu.module.model.module.ArchivedModuleList;
+import seedu.module.model.module.Module;
 import seedu.module.model.module.TrackedModule;
 import seedu.module.storage.JsonModuleBookStorage;
 import seedu.module.storage.JsonUserPrefsStorage;
@@ -109,6 +111,21 @@ public class LogicManagerTest {
     public void getDisplayedList_modifyList_throwsUnsupportedOperationException() {
         model.displayArchivedList();
         assertThrows(UnsupportedOperationException.class, () -> logic.getDisplayedList().remove(0));
+    }
+
+    @Test
+    public void getDisplayedModule_withoutSet_returnEmptyOptional() {
+        Optional<Module> expectedModule = Optional.empty();
+        assertEquals(expectedModule, model.getDisplayedModule());
+    }
+
+    @Test
+    public void getDisplayedModule_withSet_returnModule() {
+        ArchivedModule archivedModule = new ArchivedModuleBuilder().build();
+        Optional<Module> expectedModule = Optional.of(archivedModule);
+
+        model.setDisplayedModule(archivedModule);
+        assertEquals(expectedModule, model.getDisplayedModule());
     }
 
     /**
