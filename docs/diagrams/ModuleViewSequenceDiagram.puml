@@ -22,14 +22,12 @@ activate MainWindow
 MainWindow -> LogicManager : executeCommand("view cs2103t")
 activate LogicManager
 
-ref over LogicManager, ViewCommand : create ViewCommand
-
-LogicManager -> ViewCommand : execute()
+LogicManager -> ViewCommand ** : create and execute
 activate ViewCommand
 
 ref over ViewCommand, Model : find matching module
 
-ViewCommand -> Model : setDisplayedModule()
+ViewCommand -> Model : setDisplayedModule(m)
 activate Model
 
 Model --> ViewCommand
