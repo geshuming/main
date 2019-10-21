@@ -6,7 +6,8 @@ import seedu.module.logic.commands.exceptions.CommandException;
 import seedu.module.model.Model;
 
 /**
- * Returns from a module-view state (from View Command). Effectively does nothing when not in that state.
+ * Returns from a module-view state (from {@code ViewCommand}).
+ * Effectively does nothing when not in that state.
  */
 public class BackCommand extends Command {
 

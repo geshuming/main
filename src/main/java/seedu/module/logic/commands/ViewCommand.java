@@ -9,7 +9,7 @@ import seedu.module.model.Model;
 import seedu.module.model.module.Module;
 
 /**
- * Views a Module identified using the module code. The viewed module could either be a tracked module
+ * Views a Module identified by the module code. The viewed module could either be a tracked module
  * or an archived module yet to be tracked.
  */
 public class ViewCommand extends Command {
@@ -17,8 +17,8 @@ public class ViewCommand extends Command {
     public static final String COMMAND_WORD = "view";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
-            + ": Views the Module identified by the module code used in the displayed Module list.\n"
-            + "Parameters: module code (must be a positive integer)\n"
+            + ": Views the Module identified by the module code.\n"
+            + "Parameters: module code\n"
             + "Example: " + COMMAND_WORD + " cs2103t";
 
     public static final String MESSAGE_VIEW_MODULE_SUCCESS = "Viewing module: %1$s";

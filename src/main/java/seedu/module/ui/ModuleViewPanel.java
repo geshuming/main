@@ -10,7 +10,7 @@ import seedu.module.commons.core.LogsCenter;
 import seedu.module.model.module.Module;
 
 /**
- * Panel containing the list of modules.
+ * Panel containing the active displayed module.
  */
 public class ModuleViewPanel extends UiPart<Region> {
     private static final String FXML = "ModuleViewPanel.fxml";

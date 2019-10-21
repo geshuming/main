@@ -31,7 +31,7 @@ public interface Logic {
     ObservableList<Module> getDisplayedList();
 
     /**
-     * Returns the active module that is being viewed by the user.
+     * Returns the Optional active {@code Module} that is being viewed by the user.
      */
     Optional<Module> getDisplayedModule();
 

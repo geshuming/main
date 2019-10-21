@@ -17,7 +17,7 @@ public class CommandResult {
     private final boolean showHelp;
 
     /**
-     * Updates the main panel to show to the user.
+     * Determines if there is a need to update the display of the active module.
      */
     private final boolean showModule;
 
@@ -52,9 +52,6 @@ public class CommandResult {
         return showHelp;
     }
 
-    /**
-     * Determines if there is a need to update the display of the active module.
-     */
     public boolean isShowModule() {
         return showModule;
     }
