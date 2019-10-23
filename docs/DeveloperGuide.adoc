@@ -171,6 +171,7 @@ The module view feature is facilitated by `displayedModule` in `ModelManager`. T
 
 The following sequence diagram shows how the module view feature is executed.
 
+.Module View Sequence Diagram
 image::ModuleViewSequenceDiagram.png[]
 
 [NOTE]
@@ -178,6 +179,7 @@ The `BackCommand` mostly follows the same sequence as described above, except th
 
 The following sequence diagram shows how the `ViewCommand` attempts to find the module from the `Model`.
 
+.Reference Diagram for finding a matching module
 image::ModuleViewSequenceDiagram_FindModule.png[]
 
 [NOTE]
