@@ -15,10 +15,12 @@ ViewCommand -> Model : getFilteredModuleList()
 activate Model
 
 Model --> ViewCommand : Tracked Module List
+deactivate Model
 
 opt module not found
 
     ViewCommand -> Model : getFilteredArchivedModuleList()
+    activate Model
     Model --> ViewCommand : Archived Module List
     deactivate Model
 
