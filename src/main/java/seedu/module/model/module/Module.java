@@ -1,5 +1,6 @@
 package seedu.module.model.module;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -15,4 +16,5 @@ public interface Module {
 
     Optional<String> getPrerequisite();
 
+    List<SemesterDetail> getSemesterDetails();
 }

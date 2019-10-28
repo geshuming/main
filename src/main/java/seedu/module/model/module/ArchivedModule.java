@@ -1,5 +1,6 @@
 package seedu.module.model.module;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -14,15 +15,22 @@ public class ArchivedModule implements Module {
     private final String title;
     private final String description;
     private final Optional<String> prerequisite;
+    private final List<SemesterDetail> semesterDetails;
 
     /**
      * Every field must be present and not null.
      */
-    public ArchivedModule(String moduleCode, String title, String description, String prerequisite) {
+    public ArchivedModule(String moduleCode, String title, String description, String prerequisite,
+        List<SemesterDetail> semesterDetails) {
         this.moduleCode = moduleCode;
         this.title = title;
         this.description = description;
         this.prerequisite = Optional.ofNullable(prerequisite);
+        this.semesterDetails = semesterDetails;
+    }
+
+    public List<SemesterDetail> getSemesterDetails() {
+        return semesterDetails;
     }
 
     public Optional<String> getPrerequisite() {
