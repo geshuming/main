@@ -1,7 +1,9 @@
 package seedu.module.storage;
 
 import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
@@ -34,7 +36,7 @@ class JsonAdaptedArchivedModule {
         this.title = title;
         this.description = description;
         this.prerequisite = prerequisite;
-        this.semesterDetails = semesterDetails;
+        this.semesterDetails = Optional.ofNullable(semesterDetails).orElse(new ArrayList<>());
     }
 
     /**
