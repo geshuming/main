@@ -39,6 +39,10 @@ public class TrackedModule implements Module, Trackable {
         return archivedModule.getPrerequisite();
     }
 
+    public Optional<String> getPreclusion() {
+        return archivedModule.getPreclusion();
+    }
+
     public SemesterDetailList getSemesterDetails() {
         return archivedModule.getSemesterDetails();
     }

@@ -24,6 +24,7 @@ class JsonAdaptedArchivedModule {
     private final String title;
     private final String description;
     private final String prerequisite;
+    private final String preclusion;
     private final List<JsonAdaptedSemesterDetail> semesterDetails;
 
     /**
@@ -32,11 +33,13 @@ class JsonAdaptedArchivedModule {
     @JsonCreator
     public JsonAdaptedArchivedModule(@JsonProperty("moduleCode") String moduleCode, @JsonProperty("title") String title,
             @JsonProperty("description") String description, @JsonProperty("prerequisite") String prerequisite,
+            @JsonProperty("preclusion") String preclusion,
             @JsonProperty("semesterData") List<JsonAdaptedSemesterDetail> semesterDetails) {
         this.moduleCode = moduleCode;
         this.title = title;
         this.description = description;
         this.prerequisite = prerequisite;
+        this.preclusion = preclusion;
         this.semesterDetails = Optional.ofNullable(semesterDetails).orElse(new ArrayList<>());
     }
 
@@ -44,7 +47,7 @@ class JsonAdaptedArchivedModule {
      * Converts this Jackson-friendly adapted module object into the model's {@code ArchivedModule} object.
      */
     public ArchivedModule toModelType() {
-        return new ArchivedModule(moduleCode, title, description, prerequisite,
+        return new ArchivedModule(moduleCode, title, description, prerequisite, preclusion,
             fromListToSemesterDetailList(semesterDetails));
     }
 

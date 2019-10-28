@@ -20,7 +20,7 @@ public class JsonAdaptedArchivedModuleTest {
     @Test
     public void toModelType_validModule() throws Exception {
         JsonAdaptedArchivedModule jsonArchivedModule = new JsonAdaptedArchivedModule(
-            VALID_MODULECODE, VALID_TITLE, VALID_DESCRIPTION, null, new ArrayList<>());
+            VALID_MODULECODE, VALID_TITLE, VALID_DESCRIPTION, null, null, new ArrayList<>());
 
         assertEquals(VALID_ARCHIVED_MODULE, jsonArchivedModule.toModelType());
     }

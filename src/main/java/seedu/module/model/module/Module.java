@@ -15,5 +15,7 @@ public interface Module {
 
     Optional<String> getPrerequisite();
 
+    Optional<String> getPreclusion();
+
     SemesterDetailList getSemesterDetails();
 }

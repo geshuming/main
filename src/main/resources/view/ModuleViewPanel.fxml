@@ -35,6 +35,11 @@
                <Text fx:id="prerequisite" styleClass="text-bright" text="\$prerequisite" />
             </children>
          </TextFlow>
+         <TextFlow styleClass="text-bright">
+            <children>
+               <Text fx:id="preclusion" styleClass="text-bright" text="\$preclusion" />
+            </children>
+         </TextFlow>
          <Label styleClass="label-bright" text="Semesters offered:" />
          <ListView fx:id="semesterData" />
          <HBox alignment="BOTTOM_LEFT">

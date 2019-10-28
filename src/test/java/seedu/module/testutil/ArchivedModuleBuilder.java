@@ -16,6 +16,7 @@ public class ArchivedModuleBuilder {
     private String title;
     private String description;
     private String prerequisite;
+    private String preclusion;
     private SemesterDetailList semesterDetails;
 
     public ArchivedModuleBuilder() {
@@ -66,7 +67,11 @@ public class ArchivedModuleBuilder {
         return this;
     }
 
+    /**
+     * Constructs and returns the {@code ArchivedModule}.
+     */
     public ArchivedModule build() {
-        return new ArchivedModule(moduleCode, title, description, prerequisite, semesterDetails);
+        return new ArchivedModule(moduleCode, title, description, prerequisite,
+            preclusion, semesterDetails);
     }
 }

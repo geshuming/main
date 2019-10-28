@@ -30,6 +30,8 @@ public class ModuleViewPanel extends UiPart<Region> {
     @FXML
     private Text prerequisite;
     @FXML
+    private Text preclusion;
+    @FXML
     private ListView<SemesterDetail> semesterData;
     @FXML
     private FlowPane links;
@@ -41,6 +43,8 @@ public class ModuleViewPanel extends UiPart<Region> {
         description.setText(module.getDescription());
         prerequisite.setText(module.getPrerequisite()
             .orElse("There are no prerequisites for this module."));
+        preclusion.setText(module.getPreclusion()
+            .orElse("There are no preclusions for this module."));
         semesterData.setItems(module.getSemesterDetails().getAsObservableList());
         semesterData.setCellFactory(listView -> new ModuleSemesterDetailCell());
 
