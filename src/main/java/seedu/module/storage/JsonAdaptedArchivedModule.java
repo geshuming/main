@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import seedu.module.commons.core.LogsCenter;
 import seedu.module.model.module.ArchivedModule;
+import seedu.module.model.module.SemesterDetailList;
 
 /**
  * Jackson-friendly version of {@link ArchivedModule}. This class serves only as a reader.
@@ -44,7 +45,14 @@ class JsonAdaptedArchivedModule {
      */
     public ArchivedModule toModelType() {
         return new ArchivedModule(moduleCode, title, description, prerequisite,
-        semesterDetails.stream()
+            fromListToSemesterDetailList(semesterDetails));
+    }
+
+    /**
+     * Converts the list of {@code JsonAdaptedSemesterDetail} to {@code SemesterDetailList}.
+     */
+    private SemesterDetailList fromListToSemesterDetailList(List<JsonAdaptedSemesterDetail> semesterDetails) {
+        return new SemesterDetailList(semesterDetails.stream()
             .map(semesterDetail -> {
                 try {
                     return semesterDetail.toModelType();

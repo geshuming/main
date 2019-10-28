@@ -1,10 +1,7 @@
 package seedu.module.testutil;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import seedu.module.model.module.ArchivedModule;
-import seedu.module.model.module.SemesterDetail;
+import seedu.module.model.module.SemesterDetailList;
 
 /**
  * A utility class to help with building ArchivedModule objects.
@@ -19,13 +16,13 @@ public class ArchivedModuleBuilder {
     private String title;
     private String description;
     private String prerequisite;
-    private List<SemesterDetail> semesterDetails;
+    private SemesterDetailList semesterDetails;
 
     public ArchivedModuleBuilder() {
         moduleCode = DEFAULT_MODULE_CODE;
         title = DEFAULT_TITLE;
         description = DEFAULT_DESCRIPTION;
-        semesterDetails = new ArrayList<>();
+        semesterDetails = new SemesterDetailList();
     }
 
     /**

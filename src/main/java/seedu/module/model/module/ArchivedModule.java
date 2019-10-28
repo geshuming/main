@@ -1,6 +1,5 @@
 package seedu.module.model.module;
 
-import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -15,13 +14,13 @@ public class ArchivedModule implements Module {
     private final String title;
     private final String description;
     private final Optional<String> prerequisite;
-    private final List<SemesterDetail> semesterDetails;
+    private final SemesterDetailList semesterDetails;
 
     /**
      * Every field must be present and not null.
      */
     public ArchivedModule(String moduleCode, String title, String description, String prerequisite,
-        List<SemesterDetail> semesterDetails) {
+        SemesterDetailList semesterDetails) {
         this.moduleCode = moduleCode;
         this.title = title;
         this.description = description;
@@ -29,7 +28,7 @@ public class ArchivedModule implements Module {
         this.semesterDetails = semesterDetails;
     }
 
-    public List<SemesterDetail> getSemesterDetails() {
+    public SemesterDetailList getSemesterDetails() {
         return semesterDetails;
     }
 

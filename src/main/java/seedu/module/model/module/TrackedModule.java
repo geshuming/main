@@ -39,7 +39,7 @@ public class TrackedModule implements Module, Trackable {
         return archivedModule.getPrerequisite();
     }
 
-    public List<SemesterDetail> getSemesterDetails() {
+    public SemesterDetailList getSemesterDetails() {
         return archivedModule.getSemesterDetails();
     }
 
