@@ -25,6 +25,8 @@ public class ModuleViewPanel extends UiPart<Region> {
     @FXML
     private Text description;
     @FXML
+    private Text prerequisite;
+    @FXML
     private FlowPane links;
 
     public ModuleViewPanel(Module module) {
@@ -32,6 +34,9 @@ public class ModuleViewPanel extends UiPart<Region> {
         moduleCode.setText(module.getModuleCode());
         title.setText(module.getTitle());
         description.setText(module.getDescription());
+        prerequisite.setText(module.getPrerequisite()
+            .orElse("There are no prerequisites for this module."));
+
         if (module instanceof Trackable) {
             Trackable trackedModule = ((Trackable) module);
             trackedModule.getLink().stream().map(link -> new LinkButton(link))

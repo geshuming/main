@@ -14,6 +14,7 @@ public class ArchivedModuleBuilder {
     private String moduleCode;
     private String title;
     private String description;
+    private String prerequisite;
 
     public ArchivedModuleBuilder() {
         moduleCode = DEFAULT_MODULE_CODE;
@@ -54,7 +55,15 @@ public class ArchivedModuleBuilder {
         return this;
     }
 
+    /**
+     * Sets the prerequisite of the {@code ArchivedModule} that we are building.
+     */
+    public ArchivedModuleBuilder withPrerequisite(String prerequisite) {
+        this.prerequisite = prerequisite;
+        return this;
+    }
+
     public ArchivedModule build() {
-        return new ArchivedModule(moduleCode, title, description);
+        return new ArchivedModule(moduleCode, title, description, prerequisite);
     }
 }

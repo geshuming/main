@@ -13,23 +13,25 @@ class JsonAdaptedArchivedModule {
     private final String moduleCode;
     private final String title;
     private final String description;
+    private final String prerequisite;
 
     /**
      * Constructs a {@code JsonAdaptedArchivedModule} with the given module details.
      */
     @JsonCreator
     public JsonAdaptedArchivedModule(@JsonProperty("moduleCode") String moduleCode, @JsonProperty("title") String title,
-            @JsonProperty("description") String description) {
+            @JsonProperty("description") String description, @JsonProperty("prerequisite") String prerequisite) {
         this.moduleCode = moduleCode;
         this.title = title;
         this.description = description;
+        this.prerequisite = prerequisite;
     }
 
     /**
      * Converts this Jackson-friendly adapted module object into the model's {@code ArchivedModel} object.
      */
     public ArchivedModule toModelType() {
-        return new ArchivedModule(moduleCode, title, description);
+        return new ArchivedModule(moduleCode, title, description, prerequisite);
     }
 
 }
