@@ -129,7 +129,16 @@ Examples:
 === Deleting a module: `delete`
 
 Untracks a module. +
-Format: `delete <index>`, index is the index of the tracked module displayed on the list through the `list` command.
+Format: `delete MODULE_CODE`
+****
+* The delete is case insensitive. e.g `cs2103t` will match `CS2103T`.
+* Only module code is searched for module to be added.
+* Only full words will be matched e.g. `cs2103` will not match `cs2103t`.
+****
+
+Examples:
+
+* `delete cs2103t`
 
 === Manage deadline tasks: `deadline`
 
