@@ -292,11 +292,6 @@ Example: `link cs1231 a/delete t/module website`
 ModuleBook data are saved in the hard disk automatically after any command that changes the data. +
 There is no need to save manually.
 
-=== Multiple User Profiles `[coming in v2.0]`
-
-Multiple users can use the same application on the same computer.
-
-
 === Grade Manager `[Coming Soon]`
 
 Tracks grades inputted by the user.
