@@ -124,7 +124,7 @@ public interface Model {
      * @param index
      * @return TrackedModule object.
      */
-    TrackedModule getTrackedModuleByIndex(Index index) throws CommandException;
+    TrackedModule getTrackedModuleByIndex(Model model, Index index) throws CommandException;
 
     /**
      * Returns the active module that is being viewed by the user.

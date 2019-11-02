@@ -42,7 +42,7 @@ public class AddDeadlineCommand extends DeadlineCommand {
 
     @Override
     public CommandResult execute(Model model) throws CommandException {
-        TrackedModule moduleToAddDeadline = model.getTrackedModuleByIndex(index);
+        TrackedModule moduleToAddDeadline = model.getTrackedModuleByIndex(model, index);
         moduleToAddDeadline.addDeadline(deadline);
 
         model.updateFilteredModuleList(Model.PREDICATE_SHOW_ALL_MODULES);

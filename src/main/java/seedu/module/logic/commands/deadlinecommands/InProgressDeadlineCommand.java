@@ -37,7 +37,7 @@ public class InProgressDeadlineCommand extends DeadlineCommand {
 
     @Override
     public CommandResult execute(Model model) throws CommandException {
-        TrackedModule moduleToMarkInProgress = model.getTrackedModuleByIndex(index);
+        TrackedModule moduleToMarkInProgress = model.getTrackedModuleByIndex(model, index);
         moduleToMarkInProgress.markDeadlineTaskAsInProgress(taskListNum - 1);
 
         model.updateFilteredModuleList(Model.PREDICATE_SHOW_ALL_MODULES);

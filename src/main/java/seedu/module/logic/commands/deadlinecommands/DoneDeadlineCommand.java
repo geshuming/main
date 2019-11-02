@@ -35,7 +35,7 @@ public class DoneDeadlineCommand extends DeadlineCommand {
 
     @Override
     public CommandResult execute(Model model) throws CommandException {
-        TrackedModule moduleToMarkDone = model.getTrackedModuleByIndex(index);
+        TrackedModule moduleToMarkDone = model.getTrackedModuleByIndex(model, index);
         moduleToMarkDone.markDeadlineTaskAsDone(taskListNum - 1);
 
         model.updateFilteredModuleList(Model.PREDICATE_SHOW_ALL_MODULES);

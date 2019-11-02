@@ -159,8 +159,8 @@ public class ModelManager implements Model {
         return foundModule;
     }
 
-    public TrackedModule getTrackedModuleByIndex(Index index) throws CommandException {
-        List<TrackedModule> lastShownList = moduleBook.getModuleList();
+    public TrackedModule getTrackedModuleByIndex(Model model, Index index) throws CommandException {
+        List<TrackedModule> lastShownList = model.getFilteredModuleList();
         if (index.getZeroBased() >= lastShownList.size()) {
             throw new CommandException(Messages.MESSAGE_INVALID_MODULE_DISPLAYED_INDEX);
         }
