@@ -25,12 +25,12 @@ public class EditDeadlineDescCommand extends EditDeadlineCommand {
 
     @Override
     public CommandResult execute(Model model) throws CommandException {
-        TrackedModule moduleToEditDescription = model.getTrackedModuleByIndex(model, index);
+        TrackedModule moduleToEditDescription = model.getTrackedModuleByIndex(index);
         deadline = moduleToEditDescription.getDeadlineList().get(taskListNum - 1);
         deadline.editDescription(description);
 
         model.updateFilteredModuleList(Model.PREDICATE_SHOW_ALL_MODULES);
-        model.displayTrackedList();
+        model.showAllTrackedModules();
 
         return new CommandResult(generateSuccessMessage(moduleToEditDescription),
                 false, true, false);

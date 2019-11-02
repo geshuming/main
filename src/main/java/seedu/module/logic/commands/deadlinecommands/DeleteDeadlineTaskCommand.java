@@ -36,11 +36,11 @@ public class DeleteDeadlineTaskCommand extends DeadlineCommand {
 
     @Override
     public CommandResult execute(Model model) throws CommandException {
-        TrackedModule moduleToDeleteDeadline = model.getTrackedModuleByIndex(model, index);
+        TrackedModule moduleToDeleteDeadline = model.getTrackedModuleByIndex(index);
         moduleToDeleteDeadline.deleteDeadlineTask(taskListNum - 1);
 
         model.updateFilteredModuleList(Model.PREDICATE_SHOW_ALL_MODULES);
-        model.displayTrackedList();
+        model.showAllTrackedModules();
 
         return new CommandResult(generateSuccessMessage(moduleToDeleteDeadline),
                 false, true, false);
