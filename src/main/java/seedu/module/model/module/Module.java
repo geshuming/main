@@ -26,6 +26,10 @@ public interface Module {
      * Returns true if both modules share the same module code.
      */
     default boolean isSameModule(Module other) {
+        if (other == null) {
+            return false;
+        }
+
         return this.getModuleCode().equals(other.getModuleCode());
     }
 
