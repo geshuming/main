@@ -33,6 +33,8 @@ public class ModuleCard extends UiPart<Region> {
     private Label description;
     @FXML
     private Label id;
+    @FXML
+    private Label trackedStatus;
 
     public ModuleCard(Module module, int displayedIndex) {
         super(FXML);
@@ -41,6 +43,12 @@ public class ModuleCard extends UiPart<Region> {
         moduleCode.setText(module.getModuleCode());
         title.setText(module.getTitle());
         description.setText(module.getDescription());
+
+        if (module.isTracked()) {
+            trackedStatus.setText("Tracked");
+            trackedStatus.getStyleClass().clear();
+            trackedStatus.getStyleClass().add("tag-tracked");
+        }
     }
 
     @Override

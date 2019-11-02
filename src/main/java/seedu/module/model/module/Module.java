@@ -21,4 +21,8 @@ public interface Module {
     SemesterDetailList getSemesterDetails();
 
     List<Integer> getListOfOfferedSemesters();
+
+    default boolean isTracked() {
+        return this instanceof Trackable;
+    }
 }
