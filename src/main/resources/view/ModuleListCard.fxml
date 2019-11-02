@@ -5,6 +5,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
@@ -13,6 +14,7 @@
     <GridPane HBox.hgrow="ALWAYS">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10" prefWidth="150" />
+         <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="10.0" />
         </columnConstraints>
         <VBox alignment="CENTER_LEFT" minHeight="105" GridPane.columnIndex="0">
             <padding>
@@ -26,11 +28,11 @@
                     </minWidth>
                 </Label>
                 <Label fx:id="moduleCode" styleClass="cell_big_label" text="\$moduleCode" />
-            <Label fx:id="trackedStatus" styleClass="tag-archived" text="Archived" />
             </HBox>
             <Label fx:id="title" styleClass="cell_small_label" text="\$title" />
             <Label fx:id="description" styleClass="cell_small_label" text="\$description" />
         </VBox>
+      <Pane fx:id="trackedStatus" styleClass="tag-archived" GridPane.columnIndex="1" />
       <rowConstraints>
          <RowConstraints />
       </rowConstraints>

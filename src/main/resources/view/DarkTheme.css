@@ -363,19 +363,9 @@
 }
 
 .tag-archived {
-    -fx-text-fill: black;
     -fx-background-color: rgb(194, 192, 192);
-    -fx-padding: 1 3 1 3;
-    -fx-border-radius: 2;
-    -fx-background-radius: 2;
-    -fx-font-size: 11;
 }
 
 .tag-tracked {
-    -fx-text-fill: black;
     -fx-background-color: rgb(125, 221, 125);
-    -fx-padding: 1 3 1 3;
-    -fx-border-radius: 2;
-    -fx-background-radius: 2;
-    -fx-font-size: 11;
 }
