@@ -364,8 +364,10 @@
 
 .tag-archived {
     -fx-background-color: rgb(194, 192, 192);
+    -fx-border-color: #383838;
 }
 
 .tag-tracked {
     -fx-background-color: rgb(125, 221, 125);
+    -fx-border-color: #383838;
 }
