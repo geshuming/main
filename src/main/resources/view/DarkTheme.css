@@ -83,6 +83,11 @@
     -fx-opacity: 1;
 }
 
+.text-command {
+    -fx-background-color: derive(#1d1d1d, 40%);
+    -fx-padding: 4px 4px 4px 4px;
+}
+
 .split-pane:horizontal .split-pane-divider {
     -fx-background-color: derive(#1d1d1d, 20%);
     -fx-border-color: transparent transparent transparent #4d4d4d;
