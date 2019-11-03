@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Scene?>
@@ -43,7 +44,11 @@
                         </VBox>
                         <VBox HBox.hgrow="ALWAYS">
                             <children>
-                                <StackPane fx:id="mainPanelPlaceholder" styleClass="pane-with-border" VBox.vgrow="ALWAYS" />
+                                <StackPane fx:id="mainPanelPlaceholder" VBox.vgrow="ALWAYS">
+                           <styleClass>
+                              <String fx:value="pane-with-border" />
+                              <String fx:value="background" />
+                           </styleClass></StackPane>
 
                                 <StackPane fx:id="resultDisplayPlaceholder" maxHeight="100.0" minHeight="100.0" styleClass="pane-with-border" VBox.vgrow="NEVER" />
 
