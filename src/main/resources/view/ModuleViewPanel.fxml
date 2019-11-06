@@ -30,7 +30,7 @@
            <panes>
              <TitledPane fx:id="moduleDetailsPane" expanded="false" text="Module Details">
                   <content>
-                     <VBox styleClass="background">
+                     <VBox maxHeight="-Infinity" minHeight="-Infinity" styleClass="background">
                         <children>
                            <Label styleClass="label-bright" text="Description" underline="true" />
                            <TextFlow styleClass="text-bright" textAlignment="JUSTIFY">
@@ -73,11 +73,11 @@
          </Accordion>
          <Accordion fx:id="deadlinesAccordion" styleClass="accordian">
            <panes>
-             <TitledPane fx:id="deadlinesAccordionPane" animated="false" text="Deadlines">
+             <TitledPane fx:id="deadlinesAccordionPane" text="Deadlines">
                <content>
                      <HBox alignment="CENTER_LEFT" spacing="5" styleClass="background">
                         <children>
-                           <Label fx:id="deadline" styleClass="label-bright" text="\$deadline" />
+                           <Label fx:id="deadline" maxHeight="-Infinity" minHeight="-Infinity" styleClass="label-bright" text="\$deadline" />
                         </children>
                      </HBox>
                </content>
@@ -90,13 +90,13 @@
          </Accordion>
          <Accordion fx:id="linksAccordion" styleClass="accordian">
             <panes>
-               <TitledPane fx:id="linksAccordionPane" animated="false" text="Links">
+               <TitledPane fx:id="linksAccordionPane" text="Links">
                   <styleClass>
                      <String fx:value="titled_pane" />
                      <String fx:value="accordian" />
                   </styleClass>
                   <content>
-                     <VBox alignment="TOP_LEFT" styleClass="background">
+                     <VBox alignment="TOP_LEFT" maxHeight="-Infinity" minHeight="-Infinity" styleClass="background">
                         <children>
                             <Label styleClass="label-bright" text="Links: " />
                             <HBox alignment="BOTTOM_LEFT" VBox.vgrow="NEVER">
