@@ -98,7 +98,6 @@
                   <content>
                      <VBox alignment="TOP_LEFT" maxHeight="-Infinity" minHeight="-Infinity" styleClass="background">
                         <children>
-                            <Label styleClass="label-bright" text="Links: " />
                             <HBox alignment="BOTTOM_LEFT" VBox.vgrow="NEVER">
                                 <children>
                                     <FlowPane fx:id="links" alignment="BOTTOM_LEFT" />
