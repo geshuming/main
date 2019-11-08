@@ -203,6 +203,45 @@ Cons:
 * Possible side effects from certain commands.
 // end::moduleview[]
 
+// tag::markmodulestatus[]
+=== [Proposed] Marking modules as completed, ongoing or planned
+
+Users can mark modules as pass:[<text style="color:darkgreen">completed</text>], pass:[<text style="color:darkorange">ongoing</text>] or pass:[<text style="color:blue">planned</text>]. Users can also timestamp the modules with the semester that the user pass:[<text style="color:darkgreen">has taken</text>]/pass:[<text style="color:darkorange">is taking</text>]/pass:[<text style="color:blue">will take</text>] the module.
+
+==== Implementation
+
+The tracked module will have 2 new fields: `moduleStatus` and `semesterTimestamp`.
+
+The `moduleStatus` will be an enumeration of:
+
+* pass:[<text style="color:darkgreen">completed</text>],
+* pass:[<text style="color:darkorange">ongoing</text>] and
+* pass:[<text style="color:blue">planned</text>].
+
+The `semesterTimestamp` will be a combination of:
+
+* an academic year
+** In NUS, the academic year representation is prefixed with "AY", followed by the last 2 digits of the starting year, and the last 2 digits of the ending year
+** e.g. AY1920, AY2021
+
+* a semester
+** In NUS, there are a total of 4 semesters. Semester 1, Semester 2, Special Term 1 (ST1) and Special Term 2 (ST2).
+** e.g. 1, 2, ST1, ST2
+
+The user will be free to modify the moduleStatus and the semesterTimestamp. The following class diagram will illustrate the above implementation.
+
+.Possible implementation of Module Status
+image::ModuleStatusClassDiagram.png[]
+
+==== Possible Extensions
+
+With the new data, users may be able to easier manage their tracked modules and gleam useful information.
+
+. pass:[<text style="color:darkgreen">Completed modules</text>] will be hidden from the module list, but still viewable through a `listall` command (proposed command) and accessible through the `view` command.
+
+. pass:[<text style="color:darkgreen">Completed modules</text>] and pass:[<text style="color:darkorange">ongoing modules</text>] can be used to determine if a user fulfil the requirements for their pass:[<text style="color:blue">planned modules</text>].
+// end::markmodulestatus[]
+
 // tag::searchfitering[]
 === Search filtering feature
 ==== Implementation
