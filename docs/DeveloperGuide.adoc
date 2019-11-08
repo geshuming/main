@@ -177,6 +177,11 @@ image::ModuleViewSequenceDiagram.png[]
 [NOTE]
 The `BackCommand` mostly follows the same sequence as described above, except that it does not need to find any module, and sets the displayed module to `null`.
 
+The following activity diagram describes the process of finding a matching module to display.
+
+.Sequence Diagram of module finding process
+image::ModuleViewFindModuleActivityDiagram.png[]
+
 ==== Design Considerations
 
 ===== Updating the Ui
