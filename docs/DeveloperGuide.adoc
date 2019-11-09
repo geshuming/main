@@ -233,7 +233,7 @@ The `semesterTimestamp` will be a combination of:
 ** In NUS, there are a total of 4 semesters. Semester 1, Semester 2, Special Term 1 (ST1) and Special Term 2 (ST2).
 ** e.g. 1, 2, ST1, ST2
 
-The user will be free to modify the moduleStatus and the semesterTimestamp. The following class diagram will illustrate the above implementation.
+The user will be free to modify the `moduleStatus` and the `semesterTimestamp`. The following class diagram will illustrate the above implementation.
 
 .Possible implementation of Module Status
 image::ModuleStatusClassDiagram.png[]
