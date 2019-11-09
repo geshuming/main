@@ -85,9 +85,9 @@ Example: `view cs1231`
 
 Alternatively, you may simply view the module by double clicking on the module in the module list.
 
-image::ViewCommandGuiStep1.png[width="790"]
+image::userguide/ViewCommandGuiStep1.png[]
 
-image::ViewCommandGuiStep2.png[width="790"]
+image::userguide/ViewCommandGuiStep2.png[]
 
 
 === Return from module view: `back`
@@ -327,6 +327,7 @@ e.g. `add cs2101`
 * *Delete* : `delete MODULE_CODE` +
 e.g. `delete cs2101`
 
+[[Glossary]]
 == Glossary
 
 === Common Application terms
