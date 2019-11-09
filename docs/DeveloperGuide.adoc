@@ -211,7 +211,7 @@ Cons:
 // tag::markmodulestatus[]
 === [Proposed] Marking modules as completed, ongoing or planned
 
-Users can mark modules as pass:[<text style="color:darkgreen">completed</text>], pass:[<text style="color:darkorange">ongoing</text>] or pass:[<text style="color:blue">planned</text>]. Users can also timestamp the modules with the semester that the user pass:[<text style="color:darkgreen">has taken</text>]/pass:[<text style="color:darkorange">is taking</text>]/pass:[<text style="color:blue">will take</text>] the module.
+Users can mark modules as pass:[<text style="color:darkgreen"><b>completed</b></text>], pass:[<text style="color:darkorange"><b>ongoing</b></text>] or pass:[<text style="color:blue"><b>planned</b></text>]. Users can also timestamp the modules with the semester that the user pass:[<text style="color:darkgreen"><b>has taken</b></text>]/pass:[<text style="color:darkorange"><b>is taking</b></text>]/pass:[<text style="color:blue"><b>will take</b></text>] the module.
 
 ==== Implementation
 
@@ -219,9 +219,9 @@ The tracked module will have 2 new fields: `moduleStatus` and `semesterTimestamp
 
 The `moduleStatus` will be an enumeration of:
 
-* pass:[<text style="color:darkgreen">completed</text>],
-* pass:[<text style="color:darkorange">ongoing</text>] and
-* pass:[<text style="color:blue">planned</text>].
+* pass:[<text style="color:darkgreen"><b>completed</b></text>],
+* pass:[<text style="color:darkorange"><b>ongoing</b></text>] and
+* pass:[<text style="color:blue"><b>planned</b></text>].
 
 The `semesterTimestamp` will be a combination of:
 
@@ -242,9 +242,9 @@ image::ModuleStatusClassDiagram.png[]
 
 With the new data, users may be able to easier manage their tracked modules and gleam useful information.
 
-. pass:[<text style="color:darkgreen">Completed modules</text>] will be hidden from the module list, but still viewable through a `listall` command (proposed command) and accessible through the `view` command.
+. pass:[<text style="color:darkgreen"><b>Completed modules</b></text>] will be hidden from the module list, but still viewable through a `listall` command (proposed command) and accessible through the `view` command.
 
-. pass:[<text style="color:darkgreen">Completed modules</text>] and pass:[<text style="color:darkorange">ongoing modules</text>] can be used to determine if a user fulfil the requirements for their pass:[<text style="color:blue">planned modules</text>].
+. pass:[<text style="color:darkgreen"><b>Completed modules</b></text>] and pass:[<text style="color:darkorange"><b>ongoing modules</b></text>] can be used to determine if a user fulfil the requirements for their pass:[<text style="color:blue"><b>planned modules</b></text>].
 // end::markmodulestatus[]
 
 // tag::searchfitering[]
