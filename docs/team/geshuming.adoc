@@ -5,43 +5,6 @@
 
 == PROJECT: ModuleBook
 
----
-
-////
-1. Overview/Introduction
-• Portfolio purpose; eg document your own role and contributions to the project, etc.
-• Context of project
-• Project name and description – what was your task, what you did to meet task requirements
-• Some background info about the project scope
-• Overview of main features
-• A key to the icons and formatting used in the document
-2. Summary of contributions
-• Enhancement(s)
-• User benefits
-• Code contributed
-• Other contributions
-3. Contributions to the User Guide (UG extract)
-• Current enhancement
-• Purpose of the command from user's perspective
-• Clear, concise, step-by-step instructions
-• range of examples
-• visual aids
-• Proposed enhancement for v2.0
-4. Contributions to the Developer Guide (DG extract)
-• Current enhancement
-• user case description
-• alternatives, pros/cons
-• diagrams
-• Proposed enhancement for v2.0
-5. Presentation
-• Heading/subheading
-• bullets, colour, callouts
-• whitespaces
-• formatting
-• graphic
-• language
-////
-
 == Overview
 
 The purpose of this portfolio is to document the contributions I have made to the ModuleBook project.
@@ -50,62 +13,66 @@ The ModuleBook project is developed by a team of 4 software engineering students
 
 ModuleBook is a module tracking and planning application for students of NUS. It allows students to view and track modules, as well as add deadlines and other useful information such as hyperlinks.
 
-// TODO: ADD GUI
-
-Note the following use of symbols:
-
-.Legend of symbols used in this portfolio
-|===
-|Symbol | Description
-|symbol 1 | symbolizes 
-|symbol 2 | symbolizes
-|===
+image::Ui.png[]
 
 == Summary of contributions
 
-* *Major enhancement*: added *archived modules*
+*Major enhancement*: added *archived modules*
 
-* *Major enhancement*: added *the ability to view archived modules*
-** What it does: allows the user to undo all previous commands one at a time. Preceding undo commands can be reversed by using the redo command.
-** Justification: This feature improves the product significantly because a user can make mistakes in commands and the app should provide a convenient way to rectify them.
-** Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.
-** Credits: _{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}_
+* *What it is*: Archived modules contain module data from NUSMods, such as the module code, title, description, prerequisites, preclusions and semester data (exam dates and whether the module is offered for the semester).
 
+* *Justification*: This feature allows developers to use existing data from NUSMods to perform operations, such as filtering (find command). This feature also allows users to view data from NUSMods.
 
-* *Minor enhancement*: added a history command that allows the user to navigate to previous commands using up/down keys.
+* *Code*: Pull requests https://github.com/AY1920S1-CS2103T-W13-1/main/pull/27[#27], https://github.com/AY1920S1-CS2103T-W13-1/main/pull/28[#28] and https://github.com/AY1920S1-CS2103T-W13-1/main/pull/44[#44]
 
-* *Code contributed*: [https://github.com[Functional code]] [https://github.com[Test code]] _{give links to collated code files}_
+*Major enhancement*: added *the ability to view modules*
 
-* *Other contributions*:
+* *What it does*: Allows users to view an archived module to get more details. Also allows users to view a tracked module to access and modify deadlines and hyperlinks.
+
+* *Justification*: This feature enhances the user experience by only displaying details from a single module at any one time. It also minimizes details to be displayed on the module list.
+
+* *Highlights*: This feature creates a context for users to perform commands pertaining to a module. For example, a user can specify that they want to add a hyperlink to the module they are viewing without specifying the module in the command.
+
+* *Credits*: The view feature is a result of the observation of many popular applications on the market, such as Telegram, Discord, Outlook.
+
+* *Code*: Pull requests https://github.com/AY1920S1-CS2103T-W13-1/main/pull/46[#46] and https://github.com/AY1920S1-CS2103T-W13-1/main/pull/72[#72]
+
+*Minor enhancement*: Refactor module list to display archived modules and tracked modules together, with tracked modules overriding the referenced archived modules. (Pull request https://github.com/AY1920S1-CS2103T-W13-1/main/pull/142[#142])
+
+*Code contributed*: https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search=geshuming&sort=groupTitle&sortWithin=title&since=2019-09-06&timeframe=commit&mergegroup=false&groupSelect=groupByRepos&breakdown=false&tabOpen=true&tabType=authorship&tabAuthor=geshuming&tabRepo=AY1920S1-CS2103T-W13-1%2Fmain%5Bmaster%5D[Link to RepoSense] for functional and test code
+
+*Other contributions*:
 
 ** Project management:
-*** Managed releases `v1.3` - `v1.5rc` (3 releases) on GitHub
-** Enhancements to existing features:
-*** Updated the GUI color scheme (Pull requests https://github.com[#33], https://github.com[#34])
-*** Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests https://github.com[#36], https://github.com[#38])
-** Documentation:
-*** Did cosmetic tweaks to existing contents of the User Guide: https://github.com[#14]
-** Community:
-*** PRs reviewed (with non-trivial review comments): https://github.com[#12], https://github.com[#32], https://github.com[#19], https://github.com[#42]
-*** Contributed to forum discussions (examples:  https://github.com[1], https://github.com[2], https://github.com[3], https://github.com[4])
-*** Reported bugs and suggestions for other teams in the class (examples:  https://github.com[1], https://github.com[2], https://github.com[3])
-*** Some parts of the history feature I added was adopted by several other class mates (https://github.com[1], https://github.com[2])
-** Tools:
-*** Integrated a third party library (Natty) to the project (https://github.com[#42])
-*** Integrated a new Github plugin (CircleCI) to the team repo
+*** Managed releases `v1.1` - `v1.4` (https://github.com/AY1920S1-CS2103T-W13-1/main/releases[Release page])
+*** Managed milestones `v1.1` - `v1.4` on Github (https://github.com/AY1920S1-CS2103T-W13-1/main/milestones[Milestone page])
+*** Managed user stories on Github (https://github.com/AY1920S1-CS2103T-W13-1/main/projects/1[User stories page])
 
-_{you can add/remove categories in the list above}_
+** Morphing from AddressBook to ModuleBook:
+*** Helped to rename files during morphing (Pull request https://github.com/AY1920S1-CS2103T-W13-1/main/pull/16[#16])
+*** Helped to integrate add and delete command with new archived module storage features (Pull request https://github.com/AY1920S1-CS2103T-W13-1/main/pull/33[#33])
+*** Migrated tests over from AddressBook (Pull requests https://github.com/AY1920S1-CS2103T-W13-1/main/pull/68[#68] and https://github.com/AY1920S1-CS2103T-W13-1/main/pull/69[#69])
+
+** Documentation:
+*** Update website style to center images and image titles (Pull request https://github.com/AY1920S1-CS2103T-W13-1/main/pull/164[#164])
+
+** Community:
+*** PRs reviewed (with non-trivial review comments): https://github.com/AY1920S1-CS2103T-W13-1/main/pull/31[#31], https://github.com/AY1920S1-CS2103T-W13-1/main/pull/38[#38], https://github.com/AY1920S1-CS2103T-W13-1/main/pull/76[#76], https://github.com/AY1920S1-CS2103T-W13-1/main/pull/147[#147], https://github.com/AY1920S1-CS2103T-W13-1/main/pull/157[#157]
+*** Contributed https://github.com/nus-cs2103-AY1920S1/forum/issues/140[a tip to the module forum]
+
+** Tools:
+*** Setup project repo with CI tools: travis and coveralls
+*** Setup project repo with netlify for website deployment preview
 
 == Contributions to the User Guide
-
 
 |===
 |_Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users._
 |===
 
-include::../UserGuide.adoc[tag=delete]
+include::../UserGuide.adoc[tag=moduleview]
 
-include::../UserGuide.adoc[tag=dataencryption]
+include::../UserGuide.adoc[tag=glossary]
 
 == Contributions to the Developer Guide
 
@@ -113,13 +80,6 @@ include::../UserGuide.adoc[tag=dataencryption]
 |_Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project._
 |===
 
-include::../DeveloperGuide.adoc[tag=undoredo]
+include::../DeveloperGuide.adoc[tag=moduleview]
 
-include::../DeveloperGuide.adoc[tag=dataencryption]
-
-
-== PROJECT: PowerPointLabs
-
----
-
-_{Optionally, you may include other projects in your portfolio.}_
+include::../DeveloperGuide.adoc[tag=markmodulestatus]
