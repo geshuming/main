@@ -2,8 +2,8 @@ package seedu.module.logic.commands;
 
 import static seedu.module.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.module.logic.commands.CommandTestUtil.assertCommandSuccess;
-import static seedu.module.logic.commands.ViewCommand.MESSAGE_VIEW_MODULE_SUCCESS;
 import static seedu.module.logic.commands.ViewCommand.MESSAGE_MODULE_NOT_FOUND;
+import static seedu.module.logic.commands.ViewCommand.MESSAGE_VIEW_MODULE_SUCCESS;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -1,7 +1,6 @@
 package seedu.module.logic.commands;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.module.logic.commands.CommandTestUtil.assertCommandSuccess;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -43,7 +42,7 @@ public class ListCommandTest {
         model.setModuleBook(moduleBook);
         expectedModel.setModuleBook(moduleBook);
 
-        // Sets the filtered list to show no module. List command should set it to show all. 
+        // Sets the filtered list to show no module. List command should set it to show all.
         model.updateFilteredModuleList(unused -> false);
 
         assertCommandSuccess(new ListCommand(), model, ListCommand.MESSAGE_SUCCESS, expectedModel);
