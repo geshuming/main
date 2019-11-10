@@ -11,6 +11,7 @@ import seedu.module.model.module.predicate.SameModuleCodePredicate;
 
 public class AddCommandParserTest {
     private static final String VALID_MODULE_CODE = "cs2103t";
+    private static final String INVALID_MODULE_CODE = "cs 2103t";
     private AddCommandParser parser = new AddCommandParser();
     private SameModuleCodePredicate addCommandParserPredicate = new SameModuleCodePredicate(VALID_MODULE_CODE);
 
@@ -20,7 +21,13 @@ public class AddCommandParserTest {
     }
 
     @Test
-    public void parse_invalidArgs_throwsParseException() {
+    public void parse_emptyString_throwsParseException() {
         assertParseFailure(parser, "", String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE));
+    }
+
+    @Test
+    public void parse_tooManyArgs_throwsParseException() {
+        assertParseFailure(parser, INVALID_MODULE_CODE,
+            String.format(MESSAGE_INVALID_COMMAND_FORMAT, "Module code should be a single word only."));
     }
 }

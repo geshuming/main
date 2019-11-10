@@ -18,6 +18,7 @@ import seedu.module.model.module.predicate.SameModuleCodePredicate;
  */
 public class DeleteCommandParserTest {
     private static final String VALID_MODULE_CODE = "cs2103t";
+    private static final String INVALID_MODULE_CODE = "cs 2103t";
     private DeleteCommandParser parser = new DeleteCommandParser();
     private SameModuleCodePredicate deleteCommandParserPredicate = new SameModuleCodePredicate(VALID_MODULE_CODE);
 
@@ -28,7 +29,13 @@ public class DeleteCommandParserTest {
     }
 
     @Test
-    public void parse_invalidArgs_throwsParseException() {
+    public void parse_emptyString_throwsParseException() {
         assertParseFailure(parser, "", String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteCommand.MESSAGE_USAGE));
+    }
+
+    @Test
+    public void parse_tooManyArgs_throwsParseException() {
+        assertParseFailure(parser, INVALID_MODULE_CODE,
+            String.format(MESSAGE_INVALID_COMMAND_FORMAT, "Module code should be a single word only."));
     }
 }
