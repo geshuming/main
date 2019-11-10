@@ -64,6 +64,8 @@ image::Ui.png[]
 *** Setup project repo with CI tools: travis and coveralls
 *** Setup project repo with netlify for website deployment preview
 
+<<<
+
 == Contributions to the User Guide
 
 |===
@@ -73,6 +75,8 @@ image::Ui.png[]
 include::../UserGuide.adoc[tag=moduleview]
 
 include::../UserGuide.adoc[tag=glossary]
+
+<<<
 
 == Contributions to the Developer Guide
 
